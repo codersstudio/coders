@@ -1,1 +1,1 @@
-dotnet tool install -g coders
+# dotnet tool install -g coders
