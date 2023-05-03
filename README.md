@@ -3,7 +3,6 @@ JSSP Language: A Brief Introduction
 ### JSSP is a language designed for efficient server and client-side development. This document provides a brief introduction to the basic syntax and main features of JSSP.
 
 ## 1. Defining Classes, Structs, and Entities
-----------
 Classes can be defined using the class keyword, and class properties and methods can be added using curly braces. JSSP provides a convenient feature that automatically generates name-based setters for struct and entity types. This makes it easy to copy data between instances of these types with matching property names.
 
 ```C#
