@@ -1,0 +1,30 @@
+
+[path="drawer", statefull, overwrite=true]
+widget DrawerPage {
+
+  func build(context BuildContext) widget {
+    return Scaffold {
+      appBar: AppBar {
+        title: Text("Drawer");
+      };
+      drawer: Drawer{
+        child: ListView {
+          padding: EdgeInsets.zero;
+          children: [
+            DrawerHeader {
+              child: Text("Drawer Header");
+              decoration: BoxDecoration(color: Colors.blue);
+            }
+
+            ListTile {
+              title: Text("Item 1");
+              onTap: () {
+                @router.pop("Hello World !");
+              };
+            }
+          ]
+        }
+      }
+    };
+  }
+}

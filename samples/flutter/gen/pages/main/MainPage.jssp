@@ -1,0 +1,94 @@
+
+[path="main", statefull, overwrite=true]
+widget MainPage {
+  
+  func build(context BuildContext) widget {
+    return 
+      Scaffold {
+        appBar: AppBar {
+          title: Text("Hello World");
+        }
+        body:
+        Container {
+          padding: EdgeInsets.all(16.0);
+          child: Column {
+            crossAxisAlignment: CrossAxisAlignment.stretch;
+            children: [
+
+              // push HomePage
+              ElevatedButton {
+                child: Text("Home Page");
+                onPressed: () {
+                  @router.push(HomePage());
+                }
+              }
+              // push SliverAppBarPage
+              ElevatedButton {
+                child: Text("SliverAppBarPage");
+                onPressed: () {
+                  @router.push(SliverAppBarPage());
+                }
+              }
+              // push BottomNavPage
+              ElevatedButton {
+                child: Text("BottomNav Page");
+                onPressed: () {
+                  @router.push(BottomNavPage());
+                }
+              }
+              // push DrawerPage
+              ElevatedButton {
+                child: Text("Drawer Page");
+                onPressed: () {
+                  @router.push(DrawerPage());
+                }
+              }
+              // push SplashPage
+              ElevatedButton {
+                child: Text("Splash Page");
+                onPressed: () {
+                  @router.push(SplashPage());
+                }
+              }
+              // push BasicListPage
+              ElevatedButton {
+                child: Text("BasicListPage");
+                onPressed: () {
+                  @router.push(BasicListPage());
+                }
+              }
+              // push ReorderableListViewPage
+              ElevatedButton {
+                child: Text("ReorderableListViewPage");
+                onPressed: () {
+                  @router.push(ReorderableListViewPage());
+                }
+              }
+              // push Navigator1Page
+              ElevatedButton {
+                child: Text("Navigator1Page");
+                onPressed: () {
+                  @router.push(Navigator1Page());
+                }
+              }
+              // push BasicDialogPage
+              ElevatedButton {
+                child: Text("BasicDialogPage");
+                onPressed: () {
+                  @router.push(BasicDialogPage());
+                }
+              }
+              // push FlutterToastPage
+              ElevatedButton {
+                child: Text("FlutterToastPage");
+                onPressed: () {
+                  @router.push(FlutterToastPage());
+                }
+              }
+
+            ]
+          }
+        }
+      };
+  }
+}

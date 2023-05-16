@@ -1,0 +1,32 @@
+
+[path="listview", statefull, overwrite=true]
+widget ReorderableListViewPage {
+  func build(context BuildContext) widget {
+
+    var items = list<widget>();
+
+    for(var i = 0; i < 100; ++i) {
+      items.put(ListTile{
+        key: Key('$i')
+        title: Text("Item " + i);
+      });
+    }
+
+    return Scaffold {
+      appBar: AppBar {
+        title: Text("ReorderableListView");
+      };
+      
+      body: ReorderableListView {
+        children: items;
+        onReorder: (oldIndex, newIndex) {
+          setState(() {
+            var item = items[oldIndex];
+            items.remove(oldIndex);
+            items.insert(newIndex, item);
+          });
+        };
+      }
+    };
+  }
+}

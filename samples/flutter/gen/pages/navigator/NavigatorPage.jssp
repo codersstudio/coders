@@ -1,0 +1,52 @@
+
+
+[path="navigator", statefull, overwrite=true]
+widget SamplePage {
+  func build(context BuildContext) widget {
+    return 
+      WillPopScope {
+        onWillPop: () async {
+          @router.pop("Hello World");
+          return false;
+        }
+        child: Scaffold {
+          appBar: AppBar {
+            title: Text("Sample Page");
+          }
+
+          body: Center {
+            child: Text("Sample Page");
+          }
+        }
+      };
+  }
+}
+
+[path="navigator", statefull, overwrite=true]
+widget Navigator1Page {
+
+  func build(context BuildContext) widget {
+    return Scaffold {
+      appBar: AppBar {
+        title: Text("Navigator 1");
+      }
+
+      body: Center {
+        child: Column {
+          mainAxisAlignment: MainAxisAlignment.center;
+
+          children: [
+            Text("Navigator 1");
+
+            ElevatedButton {
+              child: Text("Go to Navigator 2");
+              onPressed: () {
+                @router.push(SamplePage());
+              }
+            }
+          ]
+        }
+      }
+    };
+  }
+}

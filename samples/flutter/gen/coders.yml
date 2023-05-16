@@ -1,0 +1,10 @@
+author: "Coders"
+version: "1.0.0"
+entry: "./main.jssp"
+projectName: "demo"
+projects:
+  - name: "flutter"
+    platform: flutter
+    outPath: "../app"
+    configs:
+      package: "com.coders.demo.app"

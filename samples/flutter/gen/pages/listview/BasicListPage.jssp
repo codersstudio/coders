@@ -1,0 +1,22 @@
+
+[path="listview", statefull, overwrite=true]
+widget BasicListPage {
+  func build(context BuildContext) widget {
+
+    var items = list<widget>();
+
+    for(var i = 0; i < 100; ++i) {
+      items.put(ListTile{ title: Text("Item " + i) });
+    }
+
+    return Scaffold {
+      appBar: AppBar {
+        title: Text("Basic ListView")
+      };
+
+      body: ListView {
+        children: items
+      }
+    };
+  }
+}

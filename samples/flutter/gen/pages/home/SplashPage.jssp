@@ -1,0 +1,29 @@
+
+
+[path="home", statefull, overwrite=true]
+widget SplashPage {
+
+
+  func initState() {
+    navigateToHomeScreen();
+  }
+
+  func navigateToHomeScreen() {
+    Future.delayed(Duration(seconds: 3), () {
+      if(mounted) {
+        @router.push(HomePage());
+      }
+    });
+  }
+  func build(context BuildContext) widget {
+    return Scaffold {
+      appBar: AppBar {
+        title: Text ("Home Screen");
+      }
+
+      body: Center {
+        child: Text ("Welcome to the Home Screen!");
+      }
+    };
+  }
+}

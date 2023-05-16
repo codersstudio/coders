@@ -1,0 +1,41 @@
+
+[path="dialog", statefull, overwrite=true]
+widget FlutterToastPage {
+
+  func build(context BuildContext) widget {
+    return
+      Scaffold {
+        appBar: AppBar {
+            title: Text("Hello World");
+        };
+        body: Container{
+          padding: EdgeInsets.all(20);
+          child: Center {
+            child: TextButton {
+              style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)
+                  ),
+                  primary: Colors.blue, // Button color
+                  onPrimary: Colors.white, // Text color
+                  minimumSize: Size(1.0 /0.0, 50), // full width and 50 height
+              );
+              child: Text("Click me");
+              onPressed: () {
+                Fluttertoast.showToast(
+                  msg: "This is a Toast message",
+                  toastLength: Toast.LENGTH_SHORT,
+                  gravity: ToastGravity.BOTTOM,
+                  timeInSecForIosWeb: 1,
+                  backgroundColor: Colors.red,
+                  textColor: Colors.white,
+                  fontSize: 16.0
+                );
+              };
+            };
+          }
+        };
+      };
+  }
+
+}

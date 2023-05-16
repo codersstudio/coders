@@ -1,0 +1,46 @@
+
+[path="dialog", statefull, overwrite=true]
+widget BasicDialogPage {
+
+  func build(context BuildContext) widget {
+    return
+      Scaffold {
+        appBar: AppBar {
+            title: Text("Hello World");
+        };
+        body: Container{
+          padding: EdgeInsets.all(20);
+          child: Center {
+            child: TextButton {
+              style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30)
+                  ),
+                  primary: Colors.blue, // Button color
+                  onPrimary: Colors.white, // Text color
+                  minimumSize: Size(1.0 /0.0, 50), // full width and 50 height
+              );
+              child: Text("Click me");
+              onPressed: () {
+                showDialog(context: context, builder: (context) {
+                  return AlertDialog {
+                    title: Text("Hello World");
+                    content: Text("This is a dialog");
+                    actions: [
+                        TextButton {
+                            child: Text("Close");
+                            onPressed: () {
+                                Navigator.of(context).pop();
+                            };
+                        }
+                    ];
+                  };
+                });
+              };
+            };
+          }
+        };
+      };
+  }
+
+}

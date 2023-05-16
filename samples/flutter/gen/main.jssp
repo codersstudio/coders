@@ -1,0 +1,7 @@
+
+define error {
+  Success 0 'success'
+}
+
+import 'flutter.jssp';
+import 'pages/main.jssp';

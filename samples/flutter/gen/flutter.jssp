@@ -1,0 +1,301 @@
+external enum {
+
+    MainAxisAlignment { start, end, center, spaceBetween,  spaceAround,  spaceEvenly }
+
+    MainAxisSize { min, max }
+
+    CrossAxisAlignment { start, end, center, stretch, baseline }
+
+    TextDirection { rtl, ltr }
+
+    VerticalDirection { up, down }
+
+    TextBaseline { alphabetic, ideographic }
+
+    Icons { add, remove, home, business, school };
+
+    BoxFit { cover, contain, fill, fitHeight, fitWidth, none, scaleDown };
+
+    // fluttertoast
+    Toast { LENGTH_SHORT, LENGTH_LONG }
+
+    ToastGravity { TOP, BOTTOM, CENTER }
+}
+
+external class {
+  
+    @platform.flutter[import='package:flutter/material.dart']
+    BuildContext {}
+
+    @platform.flutter[import='package:flutter/material.dart']
+    TextStyle{}
+
+    @platform.flutter[import='package:flutter/material.dart']
+    TextTheme {
+        var headline4 TextStyle;
+    }
+
+    @platform.flutter[import='package:flutter/material.dart']
+    Theme {
+        var textTheme TextTheme;
+        static func of(BuildContext) Theme;  
+    }
+
+    @platform.flutter[import='package:flutter/material.dart']
+    Color(int32) {}
+
+    @platform.flutter[import='package:flutter/material.dart']
+    EdgeInsets() {
+        static func all(double) EdgeInsets;
+        static var zero EdgeInsets;
+    }
+
+    @platform.flutter[import='package:flutter/material.dart']
+    BorderRadius() {
+        static func circular(double) BorderRadius;
+    }
+
+    @platform.flutter[import='package:flutter/material.dart']
+    RoundedRectangleBorder({
+        borderRadius: BorderRadius
+    });
+
+    @platform.flutter[import='package:flutter/material.dart']
+    Size(double, double) {}
+
+    @platform.flutter[import='package:flutter/material.dart']
+    ButtonStyle() {
+        static func from(ButtonStyle) ButtonStyle;
+    }
+
+    @platform.flutter[import='package:flutter/material.dart']
+    Key(string) {}
+
+    @platform.flutter[import='package:flutter/material.dart']
+    Duration({
+        seconds: int32,
+        hours: int32,
+        minutes: int32,
+        milliseconds: int32,
+        microseconds: int32,
+    }) {
+    }
+
+    @platform.flutter[import='package:flutter/material.dart']
+    Future<T> {
+        static func delayed(Duration, () void) void;
+    }
+
+    @platform.flutter[import='package:flutter/material.dart']
+    Colors {
+        static var blue map<int32, Color>;
+        static var white map<int32, Color>;
+        static var amber map<int32, Color>;
+        static var red map<int32, Color>;
+    }
+
+    @platform.flutter[import='package:flutter/material.dart']
+    BoxDecoration({
+        color: Color,
+        borderRadius: BorderRadius,
+    });
+
+    @platform.flutter[import='package:flutter/material.dart']
+    Navigator {
+        static func push(BuildContext, widget) void;
+        static func pop(BuildContext) void;
+        static func of(BuildContext) Navigator;
+    }
+}
+
+
+external widget {
+    @platform.flutter[import='package:flutter/material.dart']
+    Scaffold({
+        appBar:widget,
+        body:widget,
+        floatingActionButton:widget,
+        bottomNavigationBar:widget,
+        drawer:widget,
+    });
+
+    @platform.flutter[import='package:flutter/material.dart']
+    Container({padding: EdgeInsets, child:widget});
+    
+    @platform.flutter[import='package:flutter/material.dart']
+    AppBar({title:widget});
+    
+    @platform.flutter[import='package:flutter/material.dart']
+    Center({child:widget});
+    
+    @platform.flutter[import='package:flutter/material.dart']
+    Text(string, {style: TextStyle});
+
+    @platform.flutter[import='package:flutter/material.dart']
+    ElevatedButton({
+        style: ButtonStyle,
+        child:widget, onPressed: () void
+        }) {
+        
+        static func styleFrom({
+            shape: RoundedRectangleBorder,
+            primary: Color,
+            onPrimary: Color,
+            minimumSize: Size,
+        }) ButtonStyle;
+    }
+
+    @platform.flutter[import='package:flutter/material.dart']
+    TextButton({
+        style: ButtonStyle,
+        child:widget, onPressed: () void
+        }) {
+        
+        static func styleFrom({
+            shape: RoundedRectangleBorder,
+            primary: Color,
+            onPrimary: Color,
+            minimumSize: Size,
+        }) ButtonStyle;
+    }
+
+    
+    @platform.flutter[import='package:flutter/material.dart']
+    Column({
+        mainAxisAlignment: MainAxisAlignment,
+        mainAxisSize: MainAxisSize,
+        crossAxisAlignment: CrossAxisAlignment,
+        textDirection: TextDirection,
+        verticalDirection: VerticalDirection,
+        textBaseline: TextBaseline,
+        children: widget[]
+    });
+    
+    @platform.flutter[import='package:flutter/material.dart']
+    Stack({
+        children: widget[]
+    });
+    
+    @platform.flutter[import='package:flutter/material.dart']
+    FloatingActionButton({child:widget, onPressed: () void});
+    
+    @platform.flutter[import='package:flutter/material.dart']
+    Icon(@enum.Icons);
+
+    @platform.flutter[import='package:flutter/material.dart']
+    CustomScrollView({
+        slivers: widget[]
+    });
+
+    @platform.flutter[import='package:flutter/material.dart']
+    SliverAppBar({
+        title: widget,
+        floating: bool,
+        pinned: bool,
+        snap: bool,
+        expandedHeight: double,
+        flexibleSpace: widget,
+        bottom: widget,
+    });
+
+    @platform.flutter[import='package:flutter/material.dart']
+    FlexibleSpaceBar({
+        centerTitle: bool,
+        title: widget,
+        background: widget,
+    });
+
+    @platform.flutter[import='package:flutter/material.dart']
+    SliverFillRemaining({
+        hasScrollBody: bool,
+        fillOverscroll: bool,
+        child: widget,
+    });
+
+    @platform.flutter[import='package:flutter/material.dart']
+    Image({
+        image: widget,
+        width: double,
+        height: double,
+        fit: BoxFit,
+    }) {
+        static func asset(string) widget;
+        static func network(string, {fit: @enum.BoxFit}) widget;
+    }
+
+    @platform.flutter[import='package:flutter/material.dart']
+    ListView({
+        children: widget[],
+        padding: EdgeInsets,
+    });
+
+    @platform.flutter[import='package:flutter/material.dart']
+    ListTile({
+        key: Key,
+        title: widget,
+        subtitle: widget,
+        leading: widget,
+        trailing: widget,
+        onTap: () void,
+    });
+
+    @platform.flutter[import='package:flutter/material.dart']
+    ReorderableListView({
+        children: widget[],
+        padding: EdgeInsets,
+        onReorder: (int32, int32) void,
+    });
+
+    @platform.flutter[import='package:flutter/material.dart']
+    BottomNavigationBarItem({
+        icon: widget,
+        label: string,
+    });
+
+    @platform.flutter[import='package:flutter/material.dart']
+    BottomNavigationBar({
+        items: BottomNavigationBarItem[],
+        currentIndex: int32,
+        onTap: (int32) void,
+        selectedItemColor: Color,
+    });
+
+    @platform.flutter[import='package:flutter/material.dart']
+    Drawer ({
+        child: widget,
+    });
+
+    @platform.flutter[import='package:flutter/material.dart']
+    DrawerHeader ({
+        child: widget,
+        decoration: BoxDecoration,
+    });
+
+    @platform.flutter[import='package:flutter/material.dart']
+    WillPopScope ({
+        child: widget,
+        onWillPop: () Future<bool>
+    });
+
+    @platform.flutter[import='package:flutter/material.dart']
+    AlertDialog ({
+        title: widget,
+        content: widget,
+        actions: widget[],
+    });
+
+
+    // fluttertoast
+    @platform.flutter[import='package:fluttertoast/fluttertoast.dart']
+    Fluttertoast {
+        static func showToast({
+            msg: string,
+            toastLength: @enum.Toast,
+            gravity: @enum.ToastGravity,
+            timeInSecForIosWeb: int32,
+            backgroundColor: Color,
+            textColor: Color,
+            fontSize: double,
+        }) void;
+    }
+}

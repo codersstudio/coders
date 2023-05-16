@@ -1,0 +1,32 @@
+
+[path="home", statefull, overwrite=true]
+widget SliverAppBarPage {
+  func build(context BuildContext) widget {
+    return Scaffold {
+      body: CustomScrollView {
+        slivers: [
+          SliverAppBar {
+            expandedHeight: 200;
+            floating: true;
+            pinned: true;
+            flexibleSpace: FlexibleSpaceBar {
+                centerTitle: true;
+                title: Text("Hello World");
+                background: Image.network(
+                    "https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg",
+                    fit: BoxFit.cover
+                );
+            };
+          }
+          SliverFillRemaining {
+            hasScrollBody: true;
+            fillOverscroll: true;
+            child: Center {
+                child: Text("Hello World");
+            };
+          }
+        ];
+      }
+    };
+  }
+}

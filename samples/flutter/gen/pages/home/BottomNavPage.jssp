@@ -1,0 +1,90 @@
+
+
+// Nave1Page
+[path="home", statefull, overwrite=true]
+widget Nav1Page {
+  func build(context BuildContext) widget {
+    return Center {
+      child: Text("Nav1");
+    };
+    
+  }
+}
+
+// Nav2Page
+[path="home", statefull, overwrite=true]
+widget Nav2Page {
+  func build(context BuildContext) widget {
+    return Center {
+      child: Text("Nav2");
+    };
+  }
+}
+
+// Nav3Page
+[path="home", statefull, overwrite=true]
+widget Nav3Page {
+  func build(context BuildContext) widget {
+    return Center {
+      child: Text("Nav3");
+    };
+  }
+}
+
+
+[path="home", statefull, overwrite=true]
+widget BottomNavPage {
+
+  var _selectedIndex = 0;
+
+  var _pages list<widget> = [
+    Nav1Page(),
+    Nav2Page(),
+    Nav3Page()
+  ];
+
+
+  func _onItemTapped(index int32) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  func initState() {
+    
+  }
+
+  func build(context BuildContext) widget {
+    return Scaffold {
+      appBar: AppBar {
+        title: Text("BottomNav");
+      }
+
+      body: Center {
+        child: _pages[_selectedIndex];
+      }
+
+      bottomNavigationBar: BottomNavigationBar {
+        items: [
+          BottomNavigationBarItem {
+            icon: Icon(Icons.home);
+            label: "Nav1";
+          }
+          BottomNavigationBarItem {
+            icon: Icon(Icons.business);
+            label: "Nav2";
+          }
+          BottomNavigationBarItem {
+            icon: Icon(Icons.school);
+            label: "Nav3";
+          }
+        ];
+
+        currentIndex: _selectedIndex;
+        selectedItemColor: Colors.amber[800];
+        onTap: _onItemTapped;
+      }
+    };
+  }
+
+}
