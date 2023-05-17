@@ -85,7 +85,13 @@ widget MainPage {
                   @router.push(FlutterToastPage());
                 }
               }
-
+              // push I18nPage
+              ElevatedButton {
+                child: Text("I18nPage");
+                onPressed: () {
+                  @router.push(I18nPage());
+                }
+              }
             ]
           }
         }

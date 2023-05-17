@@ -1,0 +1,25 @@
+
+
+
+
+[path="i18n", statefull, overwrite=true]
+widget I18nPage {
+
+  func build(context BuildContext) widget {
+    return
+      Scaffold {
+        appBar: AppBar {
+            title: Text("I18n Page");
+        };
+        body: Container{
+          padding: EdgeInsets.all(20);
+          child: Center {
+            child: Text(@i18n.hello) {
+              style: Theme.of(context).textTheme.labelLarge;
+            }
+          }
+        };
+      };
+  }
+
+}

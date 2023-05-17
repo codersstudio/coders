@@ -12,4 +12,8 @@ import 'drawer/DrawerPage.jssp';
 import 'dialog/*';
 import 'listview/*';
 
+
+import 'i18n/strings.jssp';
+import 'i18n/I18nPage.jssp';
+
 import 'main/MainPage.jssp';

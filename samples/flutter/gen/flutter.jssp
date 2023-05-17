@@ -28,11 +28,26 @@ external class {
     BuildContext {}
 
     @platform.flutter[import='package:flutter/material.dart']
-    TextStyle{}
+    TextStyle{
+    }
 
     @platform.flutter[import='package:flutter/material.dart']
     TextTheme {
-        var headline4 TextStyle;
+        var displayLarge TextStyle;
+        var displayMedium TextStyle;
+        var displaySmall TextStyle;
+        var headlineLarge TextStyle;
+        var headlineMedium TextStyle;
+        var headlineSmall TextStyle;
+        var titleLarge TextStyle;
+        var titleMedium TextStyle;
+        var titleSmall TextStyle;
+        var bodyLarge TextStyle;
+        var bodyMedium TextStyle;
+        var bodySmall TextStyle;
+        var labelLarge TextStyle;
+        var labelMedium TextStyle;
+        var labelSmall TextStyle;
     }
 
     @platform.flutter[import='package:flutter/material.dart']
