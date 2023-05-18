@@ -1,0 +1,53 @@
+
+
+[path="store", statefull, overwrite=true]
+widget StorePage {
+
+  var todo = @struct.TodoItem();
+  // var todo1 @struct.TodoItem;
+
+  func initState() {
+    
+  }
+
+  func build(context BuildContext) widget {
+    return
+      Scaffold {
+        appBar: AppBar {
+            title: Text("Home Page");
+        };
+        body: Container{
+          padding: EdgeInsets.all(20)
+          child: Column {
+            crossAxisAlignment: CrossAxisAlignment.stretch;
+            children: [
+              FilledButton {
+                child: Text("Save Data");
+                onPressed: () {
+                  var todoItems = @store.todo.todoItems;
+
+                   var todo = @struct.TodoItem();
+                   todo.title = "Todo " + todoItems.length;
+                   todo.completed = false;
+                   
+                   todoItems.add(todo);
+                   @store.todo.todoItems = todoItems;
+                }
+              }
+
+              FilledButton {
+                child: Text("Load Data");
+                onPressed: () {
+                  var todoItems = @store.todo.todoItems;
+                  for(var i = 0; i < todoItems.length; ++i) {
+                    var todoItem = todoItems[i];
+                    @console.log(todoItem.title);
+                  }
+                }
+              }
+            ]
+          }
+        };
+      };
+  }
+}

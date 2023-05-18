@@ -146,6 +146,7 @@ external widget {
     @platform.flutter[import='package:flutter/material.dart']
     Text(string, {style: TextStyle});
 
+    // ElevatedButton
     @platform.flutter[import='package:flutter/material.dart']
     ElevatedButton({
         style: ButtonStyle,
@@ -158,6 +159,14 @@ external widget {
             onPrimary: Color,
             minimumSize: Size,
         }) ButtonStyle;
+    }
+
+    // FilledButton
+    @platform.flutter[import='package:flutter/material.dart']
+    FilledButton({
+        style: ButtonStyle,
+        child:widget, onPressed: () void
+        }) {
     }
 
     @platform.flutter[import='package:flutter/material.dart']
@@ -313,4 +322,9 @@ external widget {
             fontSize: double,
         }) void;
     }
+
+    @platform.flutter[import='package:flutter/material.dart']
+    SingleChildScrollView ({
+        child: widget,
+    });
 }

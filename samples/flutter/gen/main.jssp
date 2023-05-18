@@ -4,4 +4,10 @@ define error {
 }
 
 import 'flutter.jssp';
+
+
+import 'structs.jssp';
+import 'strings.jssp';
+
+import 'store.jssp';
 import 'pages/main.jssp';

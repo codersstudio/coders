@@ -2,22 +2,26 @@
 define string[locale="ko"] {
   // 알 수 없는 오류 입니다.
   hello: "안녕하세요";
+  helloWithName: "안녕하세요 {name}님";
 }
 
 // 영어
 define string[locale="en"] {
   // 알 수 없는 오류 입니다.
   hello: "Hello";
+  helloWithName: "Hello {name}";
 }
 
 // 일어
 define string[locale="ja"] {
   // 알 수 없는 오류 입니다.
   hello: "こんにちは";
+  helloWithName: "こんにちは {name}さん";
 }
 
 // 중국어
 define string[locale="zh"] {
   // 알 수 없는 오류 입니다.
   hello: "你好";
+  helloWithName: "你好 {name}";
 }

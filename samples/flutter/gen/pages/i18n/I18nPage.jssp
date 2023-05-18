@@ -14,8 +14,15 @@ widget I18nPage {
         body: Container{
           padding: EdgeInsets.all(20);
           child: Center {
-            child: Text(@i18n.hello) {
-              style: Theme.of(context).textTheme.labelLarge;
+            child: Column {
+              children: [
+                Text(@i18n.hello) {
+                  style: Theme.of(context).textTheme.labelLarge;
+                }
+                Text(@i18n.helloWithName("John")) {
+                  style: Theme.of(context).textTheme.labelLarge;
+                }
+              ]
             }
           }
         };

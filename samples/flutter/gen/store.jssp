@@ -1,0 +1,15 @@
+
+
+store main {
+}
+
+[desc='app store', module=true]
+store app {
+  deviceId string;
+}
+
+[desc='user store', module=true]
+store todo {
+  [localStorage=true]
+  todoItems list<TodoItem>;
+}

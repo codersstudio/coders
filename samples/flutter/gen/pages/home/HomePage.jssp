@@ -7,25 +7,12 @@ widget HomePage {
     return
       Scaffold {
         appBar: AppBar {
-            title: Text("Hello World");
+            title: Text("Home Page");
         };
         body: Container{
           padding: EdgeInsets.all(20)
           child: Center {
-            child: TextButton {
-              style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30)
-                  ),
-                  primary: Colors.blue, // Button color
-                  onPrimary: Colors.white, // Text color
-                  minimumSize: Size(1.0 /0.0, 50), // full width and 50 height
-              );
-              child: Text("Click me");
-              onPressed: () {
-                  @console.log("Hello World");
-              };
-            }
+            child: Text("Hello World");
           }
         };
       };
