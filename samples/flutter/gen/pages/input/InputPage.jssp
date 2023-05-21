@@ -1,0 +1,45 @@
+
+
+[path="input", statefull, overwrite=true]
+widget InputPage {
+
+  func build(context BuildContext) widget {
+    return
+      Scaffold {
+        appBar: AppBar {
+            title: Text("Input Page");
+        };
+        body: Container{
+          padding: EdgeInsets.all(20)
+          child: Column {
+            children: [
+              TextField {}
+              SizedBox(height: 20)
+              TextField {
+                decoration: InputDecoration(
+                  isDense: true,
+                  // filled: true,
+                  // fillColor: Colors.grey[200], // Set the fill color here
+                  enabledBorder: OutlineInputBorder (
+                    borderSide: BorderSide (
+                      // color: Colors..grey[300],
+                      width: 2.0  // Set the border color here
+                    ),
+                    borderRadius: BorderRadius.circular(8)
+                  ),
+                  focusedBorder: OutlineInputBorder (
+                    borderSide: BorderSide (
+                      color: Colors.blue,
+                      width: 2.0  // Set the border color when focused
+                    )
+                    borderRadius: BorderRadius.circular(8)
+                  ),
+                  hintText: 'Enter your text here'
+                ) // decoration
+              } // TextField
+            ] // Column
+          } // Container
+        };
+      };
+  }
+}

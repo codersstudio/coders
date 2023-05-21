@@ -107,6 +107,7 @@ external class {
         static var white map<int32, Color>;
         static var amber map<int32, Color>;
         static var red map<int32, Color>;
+        static var grey map<int32, Color>;
     }
 
     @platform.flutter[import='package:flutter/material.dart']
@@ -121,6 +122,42 @@ external class {
         static func pop(BuildContext) void;
         static func of(BuildContext) Navigator;
     }
+
+
+    @platform.flutter[import='package:flutter/material.dart']
+    BorderSide({
+        color: Color,
+        width: double,
+        // style: BorderStyle,
+    });
+
+    @platform.flutter[import='package:flutter/material.dart']
+    OutlineInputBorder({
+        borderSide: BorderSide,
+        borderRadius: BorderRadius,
+    });
+
+    @platform.flutter[import='package:flutter/material.dart']
+    InputDecoration({
+        labelText: string,
+        hintText: string,
+        prefixIcon: widget,
+        suffixIcon: widget,
+        border: widget,
+        errorText: string,
+        filled: bool,
+        fillColor: Color,
+        enabledBorder: OutlineInputBorder,
+        focusedBorder: OutlineInputBorder,
+        isDense: bool,
+    });
+
+    @platform.flutter[import='package:flutter/material.dart']
+    SizedBox({
+        width: double,
+        height: double,
+        child: widget,
+    });
 }
 
 
@@ -326,5 +363,13 @@ external widget {
     @platform.flutter[import='package:flutter/material.dart']
     SingleChildScrollView ({
         child: widget,
+    });
+
+    @platform.flutter[import='package:flutter/material.dart']
+    TextField ({
+        // controller: TextEditingController,
+        decoration: InputDecoration,
+        // keyboardType: @enum.TextInputType,
+        // onChanged: (string) void,
     });
 }

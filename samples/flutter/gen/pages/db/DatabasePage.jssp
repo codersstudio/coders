@@ -1,0 +1,44 @@
+
+
+[path="db", statefull, overwrite=true]
+widget DatabasePage {
+
+  func build(context BuildContext) widget {
+    return
+      Scaffold {
+        appBar: AppBar {
+            title: Text("Database Page");
+        };
+        body: Container{
+          padding: EdgeInsets.all(20)
+          child: Column {
+            crossAxisAlignment: CrossAxisAlignment.stretch;
+            mainAxisAlignment: MainAxisAlignment.center;
+            children: [
+              FilledButton {
+                child: Text("Save Data");
+                onPressed: () {
+                  @console.log("Save Data");
+                  
+                }
+              }
+
+              FilledButton {
+                child: Text("Load Data");
+                onPressed: () async {
+                  @console.log("Load Data");
+                  // var todoList = @query.client.selectTodoList();
+                  var todoList = @query.selectTodoList();
+                  if(todoList != null) {
+                    @console.log("Todo List: " + todoList.length);
+                  } else {
+                    @console.log("Todo List is null");
+                  }
+                }
+              }
+            ]
+          }
+        };
+      };
+  }
+}

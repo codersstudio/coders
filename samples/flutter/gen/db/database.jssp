@@ -1,0 +1,20 @@
+
+entity TodoVo {
+  todoId TodoID;
+  title Title;
+  createTime Datetime;
+  updateTime Datetime;
+}
+
+table todo {
+  todo_id TodoID = 0;
+  title Title = '';
+  create_time Datetime;
+  update_time Datetime;
+
+  key(todo_id);
+}
+
+query selectTodoList() list<TodoVo> {
+  select todo_id, title, create_time, update_time from todo;
+}

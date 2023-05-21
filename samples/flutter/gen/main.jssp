@@ -3,11 +3,14 @@ define error {
   Success 0 'success'
 }
 
+import 'type.jssp';
 import 'flutter.jssp';
 
+import 'db/database.jssp';
 
 import 'structs.jssp';
 import 'strings.jssp';
 
 import 'store.jssp';
+
 import 'pages/main.jssp';

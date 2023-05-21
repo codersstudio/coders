@@ -100,6 +100,20 @@ widget MainPage {
                     @router.push(StorePage());
                   }
                 }
+                // push DatabasePage
+                FilledButton {
+                  child: Text("DatabasePage");
+                  onPressed: () {
+                    @router.push(DatabasePage());
+                  }
+                }
+                // push InputPage
+                FilledButton {
+                  child: Text("InputPage");
+                  onPressed: () {
+                    @router.push(InputPage());
+                  }
+                }
               ]
             }
           }

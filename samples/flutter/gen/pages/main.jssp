@@ -8,9 +8,11 @@ import 'navigator/NavigatorPage.jssp';
 
 import 'drawer/DrawerPage.jssp';
 
+import 'input/*';
 import 'dialog/*';
 import 'listview/*';
 import 'i18n/*';
 import 'store/*';
+import 'db/*';
 
 import 'main/MainPage.jssp';
